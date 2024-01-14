@@ -1,6 +1,9 @@
 array = [5, 9, 4, 8, 6]
 
 def insertion_sort(arr):
+    if len(arr) <= 1:
+        return arr
+
     for i in range(1, len(arr)):
         key = arr[i]
         j = i - 1
