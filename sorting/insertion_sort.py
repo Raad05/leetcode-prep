@@ -16,3 +16,5 @@ def insertion_sort(arr):
     return arr
 
 print(insertion_sort(array))
+
+# Time Complexity: Worst case = O(n ** 2) || Best case = O(n)

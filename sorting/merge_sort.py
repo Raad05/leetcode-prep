@@ -32,3 +32,5 @@ def merge(left, right):
     return new
 
 print(merge_sort(array))
+
+# Time Complexity: Worst case = O(nlogn) || Best case = O(nlogn)

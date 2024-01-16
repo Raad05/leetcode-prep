@@ -31,3 +31,5 @@ def partition(arr, low, high):
 lo = 0
 hi = len(array) - 1
 print(quick_sort(array, lo, hi))
+
+# Time Complexity: Worst case = O(n ** 2) || Best case = O(nlogn)

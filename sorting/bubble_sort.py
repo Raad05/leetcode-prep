@@ -13,3 +13,5 @@ def bubble_sort(arr):
     return arr
 
 print(bubble_sort(array))
+
+# Time Complexity: Worst case = O(n ** 2) || Best case = O(n)
