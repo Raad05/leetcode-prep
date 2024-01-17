@@ -1,3 +1,4 @@
+# Uses Queue
 graph = {
     "5": ["3", "7"],
     "3": ["2", "4"],
@@ -8,11 +9,8 @@ graph = {
 }
 
 def bfs(graph, node):
-    visited = []
-    queue = []
-
-    visited.append(node)
-    queue.append(node)
+    visited = [node]
+    queue = [node]
 
     while queue:
         current = queue.pop(0)
