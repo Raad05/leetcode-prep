@@ -1,4 +1,4 @@
-# recursive approach
+# recursive approach => memoization
 def fib(num, dp):
     if num == 0:
         return 0
