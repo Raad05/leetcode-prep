@@ -12,7 +12,3 @@ class Solution(object):
                 nums1[k] = nums2[j]
                 j -= 1
             k -= 1    
-
-
-# nums1= [1, 2, 3, 0, 0, 0] || m = 3
-# nums2 = [1, 2, 3] || n = 3
