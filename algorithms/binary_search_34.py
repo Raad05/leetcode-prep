@@ -1,30 +1,45 @@
-class Solution(object):
-    def locate_number(self, nums, target, mid):
-        mid_number = nums[mid]
+def binary_search(lo, hi, condition):
+    while lo <= hi:
+        mid = (lo + hi) // 2
+        result = condition(mid)
 
-        if mid_number == target:
-            if mid - 1 >= 0 and nums[mid - 1] == target:
+        if result == 'found':
+            return mid
+        elif result == 'left':
+            hi = mid - 1
+        elif result == 'right':
+            lo = mid + 1
+
+    return -1
+
+def first_position(nums, target):
+    def condition(mid):
+        if nums[mid] == target:
+            if mid > 0 and nums[mid-1] == target:
                 return 'left'
-            else:
-                return 'found'
-        elif mid_number > target:
-            return 'left'
-        elif mid_number < target:
+            return 'found'
+        elif nums[mid] < target:
             return 'right'
+        else:
+            return 'left'
+    return binary_search(0, len(nums)-1, condition)
 
-    def searchRange(self, nums, target):
-        lo, hi = 0, len(nums) - 1
-        output = [-1, -1]
+def last_position(nums, target):
+    def condition(mid):
+        if nums[mid] == target:
+            if mid < len(nums)-1 and nums[mid+1] == target:
+                return 'right'
+            return 'found'
+        elif nums[mid] < target:
+            return 'right'
+        else:
+            return 'left'
+    return binary_search(0, len(nums)-1, condition)
 
-        while lo <= hi:
-            mid = (lo + hi) // 2
-            result = locate_number(nums, target, mid)
+def searchRange(nums, target):
+    return [first_position(nums, target), last_position(nums, target)]
 
-            if result == 'found':
-                output[0] = mid
-                return
-            elif result == 'left':
-                hi = mid - 1
-            elif result == 'right':
-                lo = mid + 1
-        
+nums = [5,7,7,8,8,10]
+target = 8
+
+print(searchRange(nums, target))
