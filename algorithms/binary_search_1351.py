@@ -8,6 +8,9 @@ class Solution(object):
 
             if result == 'left':
                 count += 1
+                hi = mid - 1
+            elif result == 'right':
+                lo = mid + 1
 
         return count
             
