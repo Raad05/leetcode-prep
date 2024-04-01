@@ -1,6 +1,6 @@
 class Solution(object):
     # generic binary search
-    def binary_search(self, nums, lo, hi, condition):
+    def binary_search(self, lo, hi, condition):
         count = 0
         while lo <= hi:
             mid = (lo + hi) // 2
